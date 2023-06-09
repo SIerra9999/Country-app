@@ -1,27 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Router from './Components/Router';
+import CountriesDashboard from './Components/CountriesDashboard';
+import CountryDetails from './Components/ CountryDetails';
 
 function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Router path='/' Component={CountriesDashboard} ></Router>
+      <Router path='/details' Component={CountryDetails} ></Router>
     </div>
-  );
+  )
 }
 
 export default App;
