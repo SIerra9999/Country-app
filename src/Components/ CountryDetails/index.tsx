@@ -13,7 +13,7 @@ const CountryDetails = () => {
         - population
         - region 
         - sub region
-        - capital 
+        - capital
         - top level domain 
         - currencies
         - languages 
