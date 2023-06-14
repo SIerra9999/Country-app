@@ -15,7 +15,10 @@ const CountriesDashboard = () => {
     fetchCountries()
   },[]) 
 
-  let mappedCountries = countries.map((country)=>{ return   <CountryCard
+  let mappedCountries = countries.map((country)=>{
+    
+    return   <CountryCard
+    key={country.name.common}
     capital={country.capital[0]} 
     country={country.name.common} 
     region={country.region}
