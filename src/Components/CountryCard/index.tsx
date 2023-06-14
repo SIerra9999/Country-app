@@ -7,7 +7,7 @@ interface BasicCountryDetails {
     capital : string
 }
 
-const index = ({country, population, region, capital} : BasicCountryDetails) => {
+const index : React.FC<BasicCountryDetails> = ({country, population, region, capital} )  => {
   return (
     <div>
         <h2>Country: {country}</h2>
