@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './Styles/App.scss';
 import Router from './Components/Router';
 import CountriesDashboard from './Components/CountriesDashboard';
 import CountryDetails from './Components/ CountryDetails';

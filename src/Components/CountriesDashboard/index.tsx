@@ -7,7 +7,7 @@ const CountriesDashboard = () => {
 
   React.useEffect(()=>{
     async function fetchCountries (){
-      let request = await fetch("https://restcountries.com/v3.1/all?fields=name,population,region,capital")
+      let request = await fetch("https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags")
       let response = await request.json()
       setCountries(response)
     }
@@ -22,10 +22,10 @@ const CountriesDashboard = () => {
     capital={country.capital[0]} 
     country={country.name.common} 
     region={country.region}
-    population={country.population}/>
+    population={country.population}
+    flagUrl={country.flags.png}/>
     })
-    // fetch the countries X
-    // create react router 
+
     // use intersection observer to show a reasonable amount of countries
   return (
     <div>

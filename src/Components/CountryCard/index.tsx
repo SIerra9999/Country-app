@@ -5,11 +5,19 @@ interface BasicCountryDetails {
     population : string
     region : string
     capital : string
+    flagUrl : string
 }
 
-const index : React.FC<BasicCountryDetails> = ({country, population, region, capital} )  => {
-  return (
+const index : React.FC<BasicCountryDetails> = ({
+    country,
+    population,
+    region,
+    capital,
+    flagUrl} )  => {
+  
+    return (
     <div>
+        <img src={flagUrl} alt="" />
         <h2>Country: {country}</h2>
         <h4>Population : {population}</h4>
         <h4>Region : {region}</h4>
