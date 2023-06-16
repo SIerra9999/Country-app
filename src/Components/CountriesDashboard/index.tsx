@@ -28,8 +28,10 @@ const CountriesDashboard = () => {
 
     // use intersection observer to show a reasonable amount of countries
   return (
-    <div>
+    <div className='dashboard'>
+      <div className="country-cards">
       {mappedCountries}
+      </div>
     </div>
   )
 }
