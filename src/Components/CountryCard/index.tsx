@@ -16,7 +16,7 @@ const index : React.FC<BasicCountryDetails> = ({
     flagUrl} )  => {
   
     return (
-    <div>
+    <div className='country-card'>
         <img src={flagUrl} alt="" />
         <h2>Country: {country}</h2>
         <h4>Population : {population}</h4>

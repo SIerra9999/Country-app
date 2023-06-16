@@ -1,4 +1,3 @@
-import React from 'react';
 import './Styles/App.scss';
 import Router from './Components/Router';
 import CountriesDashboard from './Components/CountriesDashboard';
