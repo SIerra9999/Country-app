@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface BasicCountryDetails {
-    country : string
+    countryName : string
     population : string
     region : string
     capital : string
@@ -9,7 +9,7 @@ interface BasicCountryDetails {
 }
 
 const index : React.FC<BasicCountryDetails> = ({
-    country,
+    countryName,
     population,
     region,
     capital,
@@ -17,11 +17,15 @@ const index : React.FC<BasicCountryDetails> = ({
   
     return (
     <div className='country-card'>
-        <img src={flagUrl} alt="" />
-        <h2>Country: {country}</h2>
-        <h4>Population : {population}</h4>
-        <h4>Region : {region}</h4>
-        <h4>Capital : {capital}</h4>
+        <img className='country-card__country-flag' src={flagUrl} alt={`${countryName}'s flag`} />
+   
+        <div className="country-card__country-details">
+        <h2>{countryName}</h2>
+        <h4 className='country-card__country-stat'>Population :  <span className='country-card__country-stat__dim-text'>{population}</span> </h4>
+        <h4 className='country-card__country-stat'>Region : <span className='country-card__country-stat__dim-text'>{region}</span></h4>
+        <h4 className='country-card__country-stat'>Capital : <span className='country-card__country-stat__dim-text'>{capital}</span></h4>
+        </div>
+
     </div>
   )
 }

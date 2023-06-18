@@ -20,7 +20,7 @@ const CountriesDashboard = () => {
     return   <CountryCard
     key={country.name.common}
     capital={country.capital[0]} 
-    country={country.name.common} 
+    countryName={country.name.common} 
     region={country.region}
     population={country.population}
     flagUrl={country.flags.png}/>

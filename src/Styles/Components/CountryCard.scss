@@ -2,5 +2,24 @@
 
 .country-card{
     background-color: $White ;
+    width: 365px;
+    height: 410px ;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px $Light-Grey;
+    border-radius: 7px;
 }
 
+.country-card__country-flag{
+    height: 50%;
+    width: 100%;
+    align-self: center;
+}
+
+.country-card__country-stat__dim-text{
+    font-weight: 300;
+}
+
+.country-card__country-details{
+    display: flex;
+    flex-direction: column;
+}
