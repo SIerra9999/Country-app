@@ -11,8 +11,9 @@ const CountriesDashboard = () => {
       let response = await request.json()
       setCountries(response)
     }
-
+    
     fetchCountries()
+    console.log(countries);
   },[]) 
 
   let mappedCountries = countries.map((country)=>{

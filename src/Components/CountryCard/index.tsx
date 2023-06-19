@@ -17,13 +17,18 @@ const index : React.FC<BasicCountryDetails> = ({
   
     return (
     <div className='country-card'>
+
         <img className='country-card__country-flag' src={flagUrl} alt={`${countryName}'s flag`} />
    
         <div className="country-card__country-details">
-        <h2>{countryName}</h2>
-        <h4 className='country-card__country-stat'>Population :  <span className='country-card__country-stat__dim-text'>{population}</span> </h4>
-        <h4 className='country-card__country-stat'>Region : <span className='country-card__country-stat__dim-text'>{region}</span></h4>
-        <h4 className='country-card__country-stat'>Capital : <span className='country-card__country-stat__dim-text'>{capital}</span></h4>
+
+            <h2 className='country-card__country-name'>{countryName}</h2>
+
+            <h5 className='country-card__country-stat'>Population :  <span     className='country-card__country-stat__dim-text'>{population}</    span> </h5>
+
+            <h5 className='country-card__country-stat'>Region : <span     className='country-card__country-stat__dim-text'>{region}</span></h5>
+
+            <h5 className='country-card__country-stat'>Capital : <span     className='country-card__country-stat__dim-text'>{capital}</    span></h5>
         </div>
 
     </div>
