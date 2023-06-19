@@ -1,8 +1,9 @@
 .dashboard {
 
     width: 90%;
-    background-color: $Very;
+
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 3rem;
+    align-self: center;
 }
