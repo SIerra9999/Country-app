@@ -13,7 +13,6 @@ const CountriesDashboard = () => {
     }
     
     fetchCountries()
-    console.log(countries);
   },[]) 
 
   let mappedCountries = countries.map((country)=>{

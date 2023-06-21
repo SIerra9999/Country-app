@@ -2,7 +2,7 @@ import React from 'react'
 
 interface BasicCountryDetails {
     countryName : string
-    population : string
+    population : number
     region : string
     capital : string
     flagUrl : string
@@ -24,7 +24,7 @@ const index : React.FC<BasicCountryDetails> = ({
 
             <h2 className='country-card__country-name'>{countryName}</h2>
 
-            <h5 className='country-card__country-stat'>Population :  <span     className='country-card__country-stat__dim-text'>{population}</    span> </h5>
+            <h5 className='country-card__country-stat'>Population :  <span     className='country-card__country-stat__dim-text'>{new Intl.NumberFormat().format (population)}</    span> </h5>
 
             <h5 className='country-card__country-stat'>Region : <span     className='country-card__country-stat__dim-text'>{region}</span></h5>
 
