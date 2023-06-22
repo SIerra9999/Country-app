@@ -5,19 +5,19 @@ import CountryDetails from './Components/ CountryDetails';
 import TopBar from './Components/TopBar';
 import FilteringBar from './Components/FilteringBar';
 import React from "react"
-import { ThemeContext } from './Components/ThemeContext';
+import { ThemeContextProvider } from './Components/ThemeContext';
 
 function App() {
-  
-  const currentTheme = React.useContext(ThemeContext)
-  console.log("from app lvl", currentTheme);
-
   return (
+ 
     <div className="App">
+      <ThemeContextProvider >
       <TopBar/>
       <FilteringBar/>
       <Router path='/' Component={CountriesDashboard} ></Router>
       <Router path='/details' Component={CountryDetails} ></Router>
+      </ThemeContextProvider>
+
     </div>
   )
 }

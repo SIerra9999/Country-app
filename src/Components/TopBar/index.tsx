@@ -1,20 +1,20 @@
 import React from 'react'
 
-import { ThemeContext,setTheme } from '../ThemeContext'
+import { useTheme } from '../ThemeContext'
 
 
 const TopBar = () => {
 
-  const currentTheme = React.useContext(ThemeContext)
-
+  const theme = useTheme()
+  console.log(theme)
   return (
     <header className='top-bar'>
         <h1 className='top-bar__welcome-message'>where in the word?</h1>
         <button className='top-bar__theme-switcher' onClick={()=>{
-          if(currentTheme=== "dark"){
-            setTheme("light")
-          }
-          setTheme("dark")
+          //@ts-ignore
+          theme.setTheme("Dark")
+
+          console.log(theme)
         }}> {`(Icon)`}Dark Mode</button>
     </header>
   )
