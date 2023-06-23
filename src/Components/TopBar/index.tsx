@@ -5,16 +5,20 @@ import { useTheme } from '../ThemeContext'
 
 const TopBar = () => {
 
-  const theme = useTheme()
-  console.log(theme)
+  const currentTheme = useTheme()
+  console.log(currentTheme)
   return (
     <header className='top-bar'>
         <h1 className='top-bar__welcome-message'>where in the word?</h1>
         <button className='top-bar__theme-switcher' onClick={()=>{
-          //@ts-ignore
-          theme.setTheme("Dark")
+          
+          if(currentTheme.theme ==="light"){
+            currentTheme.setTheme("dark")
+          }else {
+            currentTheme.setTheme("light")
+          }
 
-          console.log(theme)
+          console.log(currentTheme.theme)
         }}> {`(Icon)`}Dark Mode</button>
     </header>
   )

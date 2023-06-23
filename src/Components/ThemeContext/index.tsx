@@ -2,7 +2,12 @@ import React from 'react'
 
 type possibleThemes = "light"|"dark"
 
-const ThemeContext = React.createContext<possibleThemes>("light")
+type contextReturn = {
+    theme : possibleThemes,
+    setTheme : (theme : possibleThemes)=>{}
+}
+
+const ThemeContext = React.createContext<contextReturn>({theme : "light" , setTheme : (theme :string)=>{ return theme} })
 
 const ThemeContextProvider = ({children} : React.PropsWithChildren) => {
 
