@@ -10,4 +10,10 @@
     background-color: $Very;
     display: flex;
     flex-direction: column;
+    color: black;
+}
+
+.App--dark
+{
+    color: $Very;
 }
