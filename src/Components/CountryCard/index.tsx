@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTheme } from '../ThemeContext'
 
 interface BasicCountryDetails {
     countryName : string
@@ -8,15 +9,15 @@ interface BasicCountryDetails {
     flagUrl : string
 }
 
-const index : React.FC<BasicCountryDetails> = ({
+const CountryCard : React.FC<BasicCountryDetails> = ({
     countryName,
     population,
     region,
     capital,
     flagUrl} )  => {
-  
+
     return (
-    <div className='country-card'>
+    <div className={`country-card country-card--${useTheme().theme}`}>
 
         <img className='country-card__country-flag' src={flagUrl} alt={`${countryName}'s flag`} />
    
@@ -35,4 +36,4 @@ const index : React.FC<BasicCountryDetails> = ({
   )
 }
 
-export default index
+export default CountryCard

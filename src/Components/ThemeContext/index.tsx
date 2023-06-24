@@ -7,11 +7,11 @@ type contextReturn = {
     setTheme : (theme : possibleThemes)=>{}
 }
 
-const ThemeContext = React.createContext<contextReturn>({theme : "light" , setTheme : (theme :string)=>{ return theme} })
+const ThemeContext = React.createContext<contextReturn>({theme : "dark" , setTheme : (theme :string)=>{ return theme} })
 
 const ThemeContextProvider = ({children} : React.PropsWithChildren) => {
 
-    const [theme,setTheme] = React.useState<possibleThemes>("light")
+    const [theme,setTheme] = React.useState<possibleThemes>("dark")
     //@ts-ignore
     return (<ThemeContext.Provider value={{theme,setTheme}}>{children}</ThemeContext.Provider>)
 
