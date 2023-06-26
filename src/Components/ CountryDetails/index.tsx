@@ -1,6 +1,9 @@
 import React from 'react'
+import {useParams} from "react-router-dom"
 
 const CountryDetails = () => {
+
+    const {countryName} = useParams() as {countryName : string}
 
 
     // get country by name or id (comes from arg)
@@ -21,7 +24,7 @@ const CountryDetails = () => {
     */
 
   return (
-    <div>CountryDetails</div>
+    <div>CountryDetails of {countryName}</div>
   )
 }
 

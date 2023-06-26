@@ -1,10 +1,8 @@
 import './Styles/App.scss';
-import Router from './Components/Router';
 import CountriesDashboard from './Components/CountriesDashboard';
 import CountryDetails from './Components/ CountryDetails';
 import TopBar from './Components/TopBar';
 import FilteringBar from './Components/FilteringBar';
-import React from "react"
 import {useTheme } from './Components/ThemeContext';
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 
@@ -19,7 +17,7 @@ function App() {
       element : <CountriesDashboard/>
     },
     {
-      path: "/details",
+      path: "details/:countryName",
       element : <CountryDetails/>
     }
   ])
