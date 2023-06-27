@@ -4,14 +4,14 @@ import CountryDetails from './Components/ CountryDetails';
 import TopBar from './Components/TopBar';
 import FilteringBar from './Components/FilteringBar';
 import {useTheme } from './Components/ThemeContext';
-import {createBrowserRouter, RouterProvider} from "react-router-dom"
+import {createHashRouter, RouterProvider} from "react-router-dom"
 
 function App() {
 
 
   const {theme} = useTheme()
 
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element : <CountriesDashboard/>
