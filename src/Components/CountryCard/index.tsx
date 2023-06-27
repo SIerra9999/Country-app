@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTheme } from '../ThemeContext'
+import { Link } from 'react-router-dom'
 
 interface BasicCountryDetails {
     countryName : string
@@ -17,6 +18,7 @@ const CountryCard : React.FC<BasicCountryDetails> = ({
     flagUrl} )  => {
 
     return (
+<   Link to={`/details/${countryName}`}> 
     <div className={`country-card country-card--${useTheme().theme}`}>
 
         <img className='country-card__country-flag' src={flagUrl} alt={`${countryName}'s flag`} />
@@ -29,6 +31,7 @@ const CountryCard : React.FC<BasicCountryDetails> = ({
         </div>
 
     </div>
+    </Link>
   )
 }
 
