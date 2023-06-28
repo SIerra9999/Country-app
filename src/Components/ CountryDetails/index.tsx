@@ -56,7 +56,7 @@ const CountryDetails = () => {
 
   return (
     <main className="details-page">
-      <Link to="/" className="details-page__back-button">
+      <Link to="/" className="details-page__back-button ">
         Back
       </Link>
       <section className="details-section">
