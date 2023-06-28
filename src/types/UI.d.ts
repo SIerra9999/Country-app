@@ -8,12 +8,17 @@ export type CountryStats = {
         official : string,
         nativeName : Object<NativeName>
     },
-    capital : string[],
-    languages : Object<string>,
-    borders : string[],
-    currencies : Object<Currency>,
-    population : number, 
-    region : string,
-    subregion : string,
+    capital : string[]
+    languages : Object<string>
+    borders : string[]
+    currencies : Object<Currency>
+    population : number 
+    region : string
+    subregion : string
     tld : string[]
+    flags : {
+        png : string
+        svg : string
+        alt : string
+    }
 }
