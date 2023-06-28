@@ -1,6 +1,6 @@
 import './Styles/App.scss';
 import CountriesDashboard from './Components/CountriesDashboard';
-import CountryDetails from './Components/ CountryDetails';
+import CountryPage from './Components/ CountryPage';
 import TopBar from './Components/TopBar';
 import {useTheme } from './Components/ThemeContext';
 import {createHashRouter, RouterProvider} from "react-router-dom"
@@ -17,7 +17,7 @@ function App() {
     },
     {
       path: "details/:countryName",
-      element : <CountryDetails/>
+      element : <CountryPage/>
     }
   ])
 
