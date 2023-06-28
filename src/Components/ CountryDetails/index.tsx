@@ -1,6 +1,7 @@
 import React from 'react'
 import {useParams} from "react-router-dom"
-import {CountryStats} from "../../types/UI"
+import {CountryStats,Currency,NativeName} from "../../types/UI"
+import { Link } from 'react-router-dom'
     /*
         THE DETAILS SHOULD BE : 
         - flag
@@ -34,16 +35,38 @@ const CountryDetails = () => {
 
     getCountryDetails()
   },[])
+    let {
+      population,
+      capital,
+      name,
+      region,
+      subregion,
+      tld,
+      currencies,
+      languages} = countryDetails || {}
 
-    console.log(countryDetails);
-    //const {population} = {...countryDetails as any} as CountryStats
-    const {population} = countryDetails || {}
-
+    const nativeName = name?.nativeName ? (Object.values(name.nativeName)[0] as NativeName).common : "Unknown"
+    currencies = currencies ? (Object.values(currencies)[0] as Currency).name : "Unknown"
+    languages = languages? Object.values(languages).join(", ") : "Unknown"
+    console.log(languages);
+    
 
   return (
-    <div>
-      <h1>{countryDetails?.name.common}</h1>
-      <h1>{population}</h1>
+    <div className='details-page'>
+
+      <Link to="/" className='details-page__back-button'> Back</Link>
+      <div className="details-page__country-details">
+        <h1 className='details-page__country-name'>{name?.common}</h1>
+          <h3 className="country-details__country-stat">
+          Native Name: {nativeName}</h3> 
+          <h3 className="country-details__country-stat">Population: {population}</h3>
+          <h3 className="country-details__country-stat">Region: {region}</h3>
+          <h3 className="country-details__country-stat">Sub Region: {subregion}</h3>
+          <h3 className="country-details__country-stat">Capital: {capital ? capital[0] : "Unknown" }</h3>
+          <h3 className="country-details__country-stat">Top Level Domain: {tld? tld[0] : "Unknown"}</h3>
+          <h3 className="country-details__country-stat">Currency: {currencies}</h3>
+          <h3 className="country-details__country-stat">Languages: {languages}</h3>
+      </div>
     </div>
   )
 }

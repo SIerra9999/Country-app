@@ -1,14 +1,17 @@
+export type NativeName = {official : string,
+    common : string}
+export type Currency = {name : string, symbol : string}
+
 export type CountryStats = {
     name : {
         common : string,
         official : string,
-        nativeName : {official : string,
-        common : string}[]
+        nativeName : Object<NativeName>
     },
     capital : string[],
-    languages : string[],
+    languages : Object<string>,
     borders : string[],
-    currencies : {name : string, symbol : string}[],
+    currencies : Object<Currency>,
     population : number, 
     region : string,
     subregion : string,

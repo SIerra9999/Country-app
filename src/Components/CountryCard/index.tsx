@@ -18,7 +18,7 @@ const CountryCard : React.FC<BasicCountryDetails> = ({
     flagUrl} )  => {
 
     return (
-<   Link to={`/details/${countryName}`}> 
+    <Link to={`/details/${countryName}`}> 
     <div className={`country-card country-card--${useTheme().theme}`}>
 
         <img className='country-card__country-flag' src={flagUrl} alt={`${countryName}'s flag`} />
