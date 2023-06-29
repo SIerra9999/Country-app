@@ -39,8 +39,9 @@ const CountryPage = () => {
           alt={alt}
         />
         <CountryDetails {...countryDetails as CountryStats} />
-        {/* make borders component */}
+
       </section>
+
     </main>
   );
 };
