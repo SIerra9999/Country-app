@@ -1,5 +1,6 @@
 import React from "react";
 import { CountryStats, Currency, NativeName } from "../../types/UI";
+import { useTheme } from "../ThemeContext";
 
 const CountryDetails: React.FC<CountryStats> = ({
   population,
@@ -31,31 +32,31 @@ const CountryDetails: React.FC<CountryStats> = ({
       <div className="country-details__stats-columns__left">
         <h3 className="country-details__country-stat">
           Native Name:{" "}
-          <span className="country-details__country-stat__dim-text">
+          <span className={`country-details__country-stat__dim-text country-details__country-stat__dim-text--${useTheme().theme}`}>
             {nativeName}
           </span>
         </h3>
         <h3 className="country-details__country-stat">
           Population:{" "}
-          <span className="country-details__country-stat__dim-text">
+          <span className={`country-details__country-stat__dim-text country-details__country-stat__dim-text--${useTheme().theme}`}>
             {population}
           </span>
         </h3>
         <h3 className="country-details__country-stat">
           Region:{" "}
-          <span className="country-details__country-stat__dim-text">
+          <span className={`country-details__country-stat__dim-text country-details__country-stat__dim-text--${useTheme().theme}`}>
             {region}
           </span>
         </h3>
         <h3 className="country-details__country-stat">
           Sub Region:{" "}
-          <span className="country-details__country-stat__dim-text">
+          <span className={`country-details__country-stat__dim-text country-details__country-stat__dim-text--${useTheme().theme}`}>
             {subregion}
           </span>
         </h3>
         <h3 className="country-details__country-stat">
           Capital:{" "}
-          <span className="country-details__country-stat__dim-text">
+          <span className={`country-details__country-stat__dim-text country-details__country-stat__dim-text--${useTheme().theme}`}>
             {capital ? capital[0] : "Unknown"}
           </span>
         </h3>
@@ -64,19 +65,19 @@ const CountryDetails: React.FC<CountryStats> = ({
       <div className="country-details__stats-columns__right">
         <h3 className="country-details__country-stat">
           Top Level Domain:{" "}
-          <span className="country-details__country-stat__dim-text">
+          <span className={`country-details__country-stat__dim-text country-details__country-stat__dim-text--${useTheme().theme}`}>
             {tld ? tld[0] : "Unknown"}
           </span>
         </h3>
         <h3 className="country-details__country-stat">
           Currency:{" "}
-          <span className="country-details__country-stat__dim-text">
+          <span className={`country-details__country-stat__dim-text country-details__country-stat__dim-text--${useTheme().theme}`}>
             {currencies}
           </span>
         </h3>
         <h3 className="country-details__country-stat">
           Languages:{" "}
-          <span className="country-details__country-stat__dim-text">
+          <span className={`country-details__country-stat__dim-text country-details__country-stat__dim-text--${useTheme().theme}`}>
             {languages}
           </span>
         </h3>
