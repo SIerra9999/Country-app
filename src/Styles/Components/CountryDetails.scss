@@ -1,0 +1,32 @@
+.country-details {
+    &__country-stat{
+        
+        font-weight: 600;
+        margin: 20px 0px;
+
+        &__dim-text{
+            font-weight: 400;
+            color: $Grey;
+        }
+    }
+
+}
+
+.country-details {
+  padding: 0px 0px 0px 100px;
+
+  &__country-name {
+    padding: 25px 0px;
+    font-size: 2rem;
+  }
+  &__stats-columns {
+
+    display: flex;
+
+    &__left {
+      margin: 0px 60px 0px 0px;
+    }
+    &__right {
+    }
+  }
+}

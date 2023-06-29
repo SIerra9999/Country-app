@@ -3,20 +3,7 @@ import { useParams } from "react-router-dom";
 import { CountryStats} from "../../types/UI";
 import { Link } from "react-router-dom";
 import CountryDetails from "../CountryDetails";
-      /*
-        THE DETAILS SHOULD BE : 
-        - flag
-        - name
-        - native name
-        - population
-        - region 
-        - sub region
-        - capital
-        - top level domain 
-        - currencies
-        - languages 
-        - border countries
-    */
+
 
 const CountryPage = () => {
   const { countryName } = useParams() as { countryName: string };
