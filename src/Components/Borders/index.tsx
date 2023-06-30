@@ -22,9 +22,9 @@ const BordersBar = ({borders} : BordersBarProps) => {
   console.log(countryNames);
   
   return (
-    <div>
-        {countryNames.map(country=>(<Badge text={country}></Badge>))}
-    </div>
+    <nav className='borders'>
+        <h3 className='borders__heading'>Border Countries: </h3>{countryNames.map(country=>(<Badge text={country}></Badge>))}
+    </nav>
   )
 }
 

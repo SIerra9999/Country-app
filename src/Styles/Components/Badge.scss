@@ -1,3 +1,9 @@
 .badge{
-    color: red;
+    color: $Grey;
+    box-shadow: 0px 0px 3px $Dark;
+    padding: 10px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin: 10px;
 }
+
