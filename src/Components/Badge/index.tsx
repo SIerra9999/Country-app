@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Badge:React.FC<React.PropsWithChildren<{text ?: string}>> = ({children,text}) => {
+const Badge: React.FC<React.PropsWithChildren<{ text?: string }>> = ({
+  children,
+  text,
+}) => {
   return (
-    <div className='badge'>{text? text : children}</div>
-  )
-}
+    <div
+      onClick={text? () => {
+        window.location.replace(
+          `${window.location.origin}/#/details/${text}`
+        );
+        window.location.reload();
+      }: ()=>{}}
+      className="badge"
+    >
+      {text ? text : children}
+    </div>
+  );
+};
 
-export default Badge
+export default Badge;
