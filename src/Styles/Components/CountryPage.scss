@@ -5,11 +5,14 @@
 
 .details-section{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 50px 0px;
 }
 
 .details-page__country-flag{
-    width: 550px;
+    width: 600px;
 }
 
 .details-page__back-button{
@@ -21,4 +24,15 @@
     justify-content: center;
     width: fit-content;
     border-radius: 5px;
+}
+
+@media (min-width : 1250px){
+  .details-page {
+    
+  }
+
+  .details-section{
+    display: flex;
+    justify-content: flex-start
+}
 }

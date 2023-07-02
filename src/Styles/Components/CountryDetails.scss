@@ -1,4 +1,7 @@
 .country-details {
+
+  width: 400px;
+
     &__country-stat{
         
         font-weight: 600;
@@ -17,7 +20,7 @@
 }
 
 .country-details {
-  padding: 0px 0px 0px 100px;
+
 
   &__country-name {
     padding: 25px 0px;
@@ -30,5 +33,11 @@
     &__left {
       margin: 0px 60px 0px 0px;
     }
+  }
+}
+
+@media (min-width : 1250px){
+  .country-details {
+    padding: 0px 0px 0px 100px;
   }
 }

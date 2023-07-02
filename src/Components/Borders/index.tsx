@@ -15,7 +15,7 @@ const BordersBar = ({borders} : BordersBarProps) => {
     fetchCountriesByBorders(borders).then(result =>{
       setCountryNames(result)
     })
-  },[])
+  },[borders])
 
   const mappedCountries = countryNames? 
   countryNames.map(country=>(<Badge text={country}></Badge>)) : "no bordering countries"
