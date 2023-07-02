@@ -2,7 +2,6 @@ import React from 'react'
 import Badge from '../Badge'
 import { Borders} from '../../types/UI'
 import { fetchCountriesByBorders } from '../../Utils/Requests'
-import { Link } from 'react-router-dom'
 
 interface BordersBarProps {
     borders : Borders

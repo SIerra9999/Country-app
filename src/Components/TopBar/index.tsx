@@ -16,8 +16,6 @@ const TopBar = () => {
           }else {
             setTheme("light")
           }
-
-          console.log(theme)
         }}> {`(Icon)`}Dark Mode</button>
     </header>
   )
