@@ -10,20 +10,20 @@ interface BordersBarProps {
 
 
 const BordersBar = ({borders} : BordersBarProps) => {
-  const [countryNames, setCountryNames] = React.useState<string[]>([""])
+  const [countryNames, setCountryNames] = React.useState<string[] | null>(null)
   
   React.useEffect(()=>{
     fetchCountriesByBorders(borders).then(result =>{
       setCountryNames(result)
     })
-
   },[])
 
-  console.log(countryNames);
+  const mappedCountries = countryNames? 
+  countryNames.map(country=>(<Badge text={country}></Badge>)) : "no bordering countries"
   
   return (
     <nav className='borders'>
-        <h3 className='borders__heading'>Border Countries: </h3>{countryNames.map(country=>(<Badge text={country}></Badge>))}
+        <h3 className='borders__heading'>Border Countries: </h3>{mappedCountries}
     </nav>
   )
 }
