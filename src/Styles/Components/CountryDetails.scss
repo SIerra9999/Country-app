@@ -5,7 +5,6 @@
     &__country-stat{
         
         font-weight: 600;
-        margin: 20px 0px;
 
         &__dim-text{
             font-weight: 400;
@@ -39,5 +38,5 @@
 @media (min-width : 1250px){
   .country-details {
     padding: 0px 0px 0px 100px;
-  }
+    width: 500px;}
 }
