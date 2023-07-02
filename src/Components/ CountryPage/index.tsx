@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { CountryStats} from "../../types/UI";
 import { Link } from "react-router-dom";
 import CountryDetails from "../CountryDetails";
-
+import { useTheme } from "../ThemeContext";
 
 const CountryPage = () => {
   const { countryName } = useParams() as { countryName: string };
@@ -28,7 +28,7 @@ const CountryPage = () => {
 
   return (
     <main className="details-page">
-      <Link to="/" className="details-page__back-button">
+      <Link to="/" className={`details-page__back-button badge badge--${useTheme().theme}`}>
         Back
       </Link>
       <section className="details-section">

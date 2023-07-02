@@ -1,9 +1,10 @@
 import React from "react";
-
+import { useTheme } from "../ThemeContext";
 const Badge: React.FC<React.PropsWithChildren<{ text?: string }>> = ({
   children,
   text,
 }) => {
+
   return (
     <div
       onClick={text? () => {
@@ -12,7 +13,7 @@ const Badge: React.FC<React.PropsWithChildren<{ text?: string }>> = ({
         );
         window.location.reload();
       }: ()=>{}}
-      className="badge"
+      className={`badge badge--${useTheme().theme}`}
     >
       {text ? text : children}
     </div>
