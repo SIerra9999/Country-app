@@ -19,3 +19,7 @@ a{
 h1,h2,h3,h4,h5,h6 {
   margin: 7px 0px;
 }
+
+*{
+  transition: color 0.05s linear, background 0.05s linear;
+}

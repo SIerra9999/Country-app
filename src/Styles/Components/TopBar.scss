@@ -6,8 +6,22 @@
     justify-content: space-between;
     padding: 0px 50px;
     align-items: center;
+    padding: 0px 5vw;
+    &__theme-switcher{
+        background-color: transparent;
+        border: none;
+        &__icon{
+            font-size: 3rem;
+        }
+    }
 }
 
 .top-bar--dark{
     background-color: $Dark-Blue;
+
+    .top-bar__theme-switcher{
+        color: $Very;
+    }
+    
 }
+
