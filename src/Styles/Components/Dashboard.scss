@@ -1,28 +1,30 @@
 .dashboard {
-    margin-top: 50px;
-    width: 90%;
+    align-self: center;
+}
+
+.dashboard__cards-section {
     display: grid;
     grid-template-columns: repeat(1, auto);
     gap: 3rem;
-    align-self: center;
+   
     justify-content: center;
 }
 
 
 @media (min-width: 800px) {
-    .dashboard{
+    .dashboard__cards-section{
         grid-template-columns: repeat(2, auto);
     }
 }
 
 @media (min-width: 1200px) {
-    .dashboard{
+    .dashboard__cards-section{
         grid-template-columns: repeat(3, auto);
     }
 }
 
 @media (min-width: 1600px) {
-    .dashboard{
+    .dashboard__cards-section{
         grid-template-columns: repeat(4, auto);
     }
 }

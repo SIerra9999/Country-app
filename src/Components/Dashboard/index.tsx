@@ -1,5 +1,6 @@
 import React from 'react'
 import CountryCard from '../CountryCard'
+import FilteringTools from '../FilteringTools'
 
 const CountriesDashboard = () => {
 
@@ -26,11 +27,17 @@ const CountriesDashboard = () => {
     flagUrl={country.flags.png}/>
     })
 
-    // use intersection observer to show a reasonable amount of countries
-  return (
-    <div className='dashboard'>
-      {mappedCountries}
-    </div>
+  return (<>
+
+      <main className='dashboard'>
+
+      <FilteringTools/>
+
+      <section className="dashboard__cards-section">      {mappedCountries}</section>
+
+    </main>
+  </>
+
   )
 }
 
