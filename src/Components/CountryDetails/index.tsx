@@ -1,8 +1,8 @@
 import React from "react";
 import { CountryStats, Currency, NativeName } from "../../types/UI";
 import { useTheme } from "../ThemeContext";
-import Badge from "../Badge";
 import BordersBar from "../Borders";
+import { formatNumber } from "../../Utils/FormattingFunction";
 
 const CountryDetails: React.FC<CountryStats> = ({
   population,
@@ -13,7 +13,7 @@ const CountryDetails: React.FC<CountryStats> = ({
   tld,
   currencies,
   languages,
-  borders
+  borders,
 }: CountryStats) => {
   const nativeName = name?.nativeName
     ? (Object.values(name.nativeName)[0] as NativeName).common
@@ -40,13 +40,13 @@ const CountryDetails: React.FC<CountryStats> = ({
             </span>
           </h3>
           <h3 className="country-details__country-stat">
-            Population:{" "}
+            Population :
             <span
               className={`country-details__country-stat__dim-text country-details__country-stat__dim-text--${
                 useTheme().theme
               }`}
             >
-              {population}
+              {formatNumber(population)}
             </span>
           </h3>
           <h3 className="country-details__country-stat">
@@ -114,7 +114,7 @@ const CountryDetails: React.FC<CountryStats> = ({
           </h3>
         </div>
       </div>
-      {borders? <BordersBar borders={borders}  /> : null }
+      {borders ? <BordersBar borders={borders} /> : null}
     </div>
   );
 };

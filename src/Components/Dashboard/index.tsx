@@ -33,7 +33,9 @@ const CountriesDashboard = () => {
 
       <FilteringTools/>
 
-      <section className="dashboard__cards-section">      {mappedCountries}</section>
+      <section className="dashboard__cards-section">
+        {mappedCountries}
+      </section>
 
     </main>
   </>

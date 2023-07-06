@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTheme } from '../ThemeContext'
 import { Link } from 'react-router-dom'
+import { formatNumber } from '../../Utils/FormattingFunction'
 
 interface BasicCountryDetails {
     countryName : string
@@ -25,7 +26,7 @@ const CountryCard : React.FC<BasicCountryDetails> = ({
    
         <div className="country-card__country-details">
             <h2 className='country-card__country-name'>{countryName}</h2>
-            <h5 className='country-card__country-stat'>Population :  <span     className='country-card__country-stat__dim-text'>{new Intl.NumberFormat().format (population)}</    span> </h5>
+            <h5 className='country-card__country-stat'>Population :  <span     className='country-card__country-stat__dim-text'>{formatNumber(population)}</span> </h5>
             <h5 className='country-card__country-stat'>Region : <span     className='country-card__country-stat__dim-text'>{region}</span></h5>
             <h5 className='country-card__country-stat'>Capital : <span     className='country-card__country-stat__dim-text'>{capital}</    span></h5>
         </div>
