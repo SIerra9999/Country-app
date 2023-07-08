@@ -1,4 +1,8 @@
-import { CountryName,Borders } from "../types/UI"
+import { CountryName,Borders  } from "../types/UI"
+
+interface BorderIndex {
+    name : CountryName
+}
 
 
 export async function fetchCountriesByBorders (countryCodes : Borders ){
@@ -8,9 +12,9 @@ export async function fetchCountriesByBorders (countryCodes : Borders ){
         const request = await fetch(requestLink)
 
         if(request.ok){
-            const response : CountryName[] = await  request.json()
-
-            return response.map((border)=> border.name.common)
+            const response : BorderIndex[] = await  request.json()
+            return response.map( border =>
+                border.name.common)
         }
 
         return null

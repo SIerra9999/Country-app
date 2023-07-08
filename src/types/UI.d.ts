@@ -9,17 +9,15 @@ export type Currency = {
 }
 
 export type CountryName = {
-    name : {
         common : string,
         official : string,
         nativeName : Object<NativeName>
-    }
 }
 
 export type Borders = string[]
 
 export type CountryStats = {
-
+    name : CountryName
     capital : string[]
     languages : Object<string>
     borders : Borders
@@ -33,4 +31,4 @@ export type CountryStats = {
         svg : string
         alt : string
     }
-} & CountryName
+}

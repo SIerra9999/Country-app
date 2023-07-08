@@ -20,11 +20,9 @@ const CountryPage = () => {
     }
 
     getCountryDetails();
-  }, []);
+  }, [countryName]);
 
   let { alt, png} = countryDetails?.flags || {};
-
-
 
   return (
     <main className="details-page">

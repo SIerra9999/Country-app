@@ -1,31 +1,35 @@
 import React from "react";
-import { CountryStats, Currency, NativeName } from "../../types/UI";
+import { CountryStats, Currency} from "../../types/UI";
 import { useTheme } from "../ThemeContext";
 import BordersBar from "../Borders";
 import { formatNumber } from "../../Utils/FormattingFunction";
 
 const CountryDetails: React.FC<CountryStats> = ({
   population,
-  capital,
-  name,
+  capital = ["unknown"],
+  name = {common : "unknown", nativeName : {} , official : "unknown"},
   region,
   subregion,
   tld,
-  currencies,
-  languages,
+  currencies = {},
+  languages = [],
   borders,
 }: CountryStats) => {
-  const nativeName = name?.nativeName
-    ? (Object.values(name.nativeName)[0] as NativeName).common
-    : "Unknown";
-  currencies = currencies
-    ? (Object.values(currencies)[0] as Currency).name
-    : "Unknown";
+  let nativeName : string
+
+  currencies = currencies.name ? (Object.values(currencies)[0] as Currency).name
+    : "undefined";
   languages = languages ? Object.values(languages).join(", ") : "Unknown";
+  try {
+    nativeName = name.nativeName[Object.keys(name.nativeName)[0]].official;
+  } catch (error) {
+    nativeName = name.official
+  }
+
 
   return (
     <div className="country-details">
-      <h1 className="country-details__country-name">{name?.common}</h1>
+      <h1 className="country-details__country-name">{name.common}</h1>
 
       <div className="country-details__stats-columns">
         <div className="country-details__stats-columns__left">
@@ -66,7 +70,7 @@ const CountryDetails: React.FC<CountryStats> = ({
                 useTheme().theme
               }`}
             >
-              {subregion}
+              {subregion ? subregion : "unknown"}
             </span>
           </h3>
           <h3 className="country-details__country-stat">
@@ -76,7 +80,7 @@ const CountryDetails: React.FC<CountryStats> = ({
                 useTheme().theme
               }`}
             >
-              {capital ? capital[0] : "Unknown"}
+              {capital}
             </span>
           </h3>
         </div>
@@ -109,7 +113,7 @@ const CountryDetails: React.FC<CountryStats> = ({
                 useTheme().theme
               }`}
             >
-              {languages}
+              {languages.length ? languages : "unknown"}
             </span>
           </h3>
         </div>

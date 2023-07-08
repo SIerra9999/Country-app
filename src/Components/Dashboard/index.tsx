@@ -1,6 +1,5 @@
 import React from 'react'
 import CountryCard from '../CountryCard'
-import FilteringTools from '../FilteringTools'
 
 const CountriesDashboard = () => {
 
@@ -31,7 +30,6 @@ const CountriesDashboard = () => {
 
       <main className='dashboard'>
 
-      <FilteringTools/>
 
       <section className="dashboard__cards-section">
         {mappedCountries}
