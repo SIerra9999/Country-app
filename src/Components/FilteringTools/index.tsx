@@ -4,7 +4,7 @@ const FilteringTools = () => {
   return (
     <section className="filtering-tools">
 
-      <input type="text" />
+      <input className="search-bar" type="text" />
 
       <select name="sub-region" id="sub-region">
 
