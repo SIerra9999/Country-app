@@ -1,11 +1,13 @@
 import React from "react";
-
+import { useTheme } from "../ThemeContext";
 const FilteringTools = () => {
+
+  const currentTheme = useTheme().theme
   return (
     <section className="filtering-tools">
-      <div className="search-bar">
+      <div className={`search-bar search-bar--${currentTheme}`}>
         <span className="material-symbols-outlined search-bar__icon">search</span>
-        <input className="search-bar__input" placeholder="Search for a Country" type="text" />
+        <input className="search-bar__input" placeholder="Search for a country ..." type="text" />
       </div>
 
       <select name="region-dropdown" id="sub-region">
