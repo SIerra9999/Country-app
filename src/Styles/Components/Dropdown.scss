@@ -1,0 +1,50 @@
+.region {
+  color: $Grey;
+  width: 230px;
+  background-color: $White;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px $Light-Grey;
+}
+
+
+.region__dropdown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  color: inherit;
+  background-color: transparent;
+  padding-right: 25px;
+  font-size: 1.25rem;
+  width: 230px;
+  height: 70px;
+  border: none;
+  padding: 0px 20px;
+  &:focus {
+    outline: none;
+
+    option {
+      font-size: inherit;
+      outline: none;
+    }
+  }
+}
+
+
+
+.region--dark {
+  background-color: $Dark-Blue;
+  color: $White;
+  box-shadow: 0px 0px 15px $Deep-Dark-Blue;
+}
+
+.dropdown-icon {
+  position: relative;
+  height: 0px;
+  width: 0px;
+  top: 15%;
+  right: 20%;
+  font-size: 2rem;
+  pointer-events: none;
+  color: inherit;
+}

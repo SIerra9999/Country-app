@@ -1,0 +1,39 @@
+.search-bar {
+    height: 70px;
+    width: 70%;
+    min-width: 350px;
+    max-width: 600px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    border: none;
+    box-shadow: 0px 0px 10px $Light-Grey;
+    background-color: $White;
+    border-radius: 5px;
+    padding: 1px;
+    color: $Grey;
+  
+    &__input {
+      color: inherit;
+      height: 100%;
+      width: 100%;
+      border: none;
+      min-width: 300px;
+      background-color: transparent;
+      font-size: 1.2rem;
+    }
+    &__input:focus {
+      outline: none;
+    }
+  
+    &__icon {
+      font-size: 2rem;
+      margin: 0px 30px;
+    }
+  }
+  
+  .search-bar--dark {
+    background-color: $Dark-Blue;
+    color: $White;
+    box-shadow: 0px 0px 15px $Deep-Dark-Blue;
+  }
