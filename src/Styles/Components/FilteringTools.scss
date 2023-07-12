@@ -1,44 +1,91 @@
-.filtering-tools{
-    margin: 50px 0px;
-    display: flex;
-    justify-content: space-between;
+.filtering-tools {
+  margin: 50px 0px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.search-bar{
+.search-bar {
+  height: 70px;
+  width: 40%;
+  min-width: 350px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0px 0px 10px $Light-Grey;
+  background-color: $White;
+  border-radius: 5px;
+  padding: 1px;
+  color: $Grey;
 
-    height: 70px;
-    width: 40%;
-    min-width: 350px;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
+  &__input {
+    color: inherit;
+    height: 100%;
     border: none;
-    box-shadow: 0px 0px 10px $Light-Grey;
-    background-color: $White;
-    border-radius: 5px;
-    padding: 1px;
-    color: $Grey;
+    min-width: 300px;
+    background-color: transparent;
+    font-size: 1.2rem;
+  }
+  &__input:focus {
+    outline: none;
+  }
 
-    &__input {
-        color: inherit;
-        height: 100%;
-        border: none;
-        min-width: 300px;
-        background-color: transparent;
-        font-size: 1.2rem;
-    }
-    &__input:focus{
-        outline: none;
-    }
-    
-    &__icon {
-        font-size: 2rem;
-        margin: 0px 30px;
-    }
+  &__icon {
+    font-size: 2rem;
+    margin: 0px 30px;
+  }
 }
 
-.search-bar--dark{
+.search-bar--dark {
+  background-color: $Dark-Blue;
+  color: $White;
+  box-shadow: 0px 0px 15px $Deep-Dark-Blue;
+}
+
+.region__dropdown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: inherit;
+
+background-color: transparent;
+  padding-right: 25px;
+
+  font-size: 1.25rem;
+  width: 230px;
+  height: 70px;
+  border: none;
+  padding: 0px 20px;
+  &:focus {
+    outline: none;
+
+    option {
+      font-size: inherit;
+    }
+  }
+}
+
+.region {
+  color: red;
+  background-color: $White;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px $Light-Grey;
+}
+
+.region--dark {
     background-color: $Dark-Blue;
-    color: $White;
-    box-shadow: 0px 0px 15px $Deep-Dark-Blue;
+  color: $White;
+  box-shadow: 0px 0px 15px $Deep-Dark-Blue;
+
+}
+
+.dropdown-icon {
+  position: relative;
+  height: 0px;
+  width: 0px;
+  top: 15%;
+  right: 20%;
+  font-size: 2rem;
+  pointer-events: none;
+  color: inherit;
 }
