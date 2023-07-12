@@ -1,22 +1,14 @@
 import React from 'react'
 import CountryCard from '../CountryCard'
 import FilteringTools from '../FilteringTools'
+import {useCountryContext} from '../CountriesContext'
 
 const CountriesDashboard = () => {
 
-  const [countries,setCountries] = React.useState<Array<any>>([])
+  const {countries} = useCountryContext()
 
-  React.useEffect(()=>{
-    async function fetchCountries (){
-      let request = await fetch("https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags")
-      let response = await request.json()
-      setCountries(response)
-    }
-    
-    fetchCountries()
-  },[]) 
-
-  let mappedCountries = countries.map((country)=>{
+  //@ts-ignore give this a proper type 
+  let mappedCountries = countries? countries.map((country)=>{
     
     return   <CountryCard
     key={country.name.common}
@@ -25,13 +17,13 @@ const CountriesDashboard = () => {
     region={country.region}
     population={country.population}
     flagUrl={country.flags.png}/>
-    })
+    }) : "loading ..."
 
   return (<>
 
       <main className='dashboard'>
 
-      <FilteringTools></FilteringTools>
+      <FilteringTools/>
       
       <section className="dashboard__cards-section">
         {mappedCountries}

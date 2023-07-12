@@ -1,27 +1,26 @@
-import React from 'react'
+import React from "react";
 
-type possibleThemes = "light"|"dark"
+type possibleThemes = "light" | "dark";
 
 type contextReturn = {
-    theme : possibleThemes,
-    setTheme : (theme : possibleThemes)=>{}
-}
+  theme: possibleThemes;
+  setTheme: React.Dispatch<React.SetStateAction<possibleThemes>>;
+};
 
-const ThemeContext = React.createContext<contextReturn>({theme : "dark" , setTheme : (theme :string)=>{ return theme} })
+const ThemeContext = React.createContext<contextReturn | undefined>(undefined);
 
-const ThemeContextProvider = ({children} : React.PropsWithChildren) => {
+const ThemeContextProvider = ({ children }: React.PropsWithChildren) => {
+  const [theme, setTheme] = React.useState<possibleThemes>("light");
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme : setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
 
-    const [theme,setTheme] = React.useState<possibleThemes>("dark")
-    //@ts-ignore
-    return (<ThemeContext.Provider value={{theme,setTheme}}>{children}</ThemeContext.Provider>)
+const useTheme = () => {
+  const theme = React.useContext(ThemeContext);
+  return theme as contextReturn;
+};
 
-}
-
-const useTheme = () =>{
-    const theme = React.useContext(ThemeContext)
-    return theme
-}
-
-export { ThemeContextProvider, useTheme} 
-
-
+export { ThemeContextProvider, useTheme };

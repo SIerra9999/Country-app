@@ -4,6 +4,7 @@ import CountryPage from './Components/ CountryPage';
 import TopBar from './Components/TopBar';
 import {useTheme } from './Components/ThemeContext';
 import {createHashRouter, RouterProvider} from "react-router-dom"
+import {CountryContextProvider,useCountryContext } from "./Components/CountriesContext"
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
   const router = createHashRouter([
     {
       path: "/",
-      element : <Dashboard/>
+      element : <><CountryContextProvider><Dashboard/></CountryContextProvider></>
     },
     {
       path: "details/:countryName",
@@ -25,6 +26,7 @@ function App() {
     <div className={`App App--${theme}`}>
 
       <TopBar/>
+
       <RouterProvider router={router}/>
 
     </div>
