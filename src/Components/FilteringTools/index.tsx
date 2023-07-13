@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "../ThemeContext";
-import {useCountryContext} from "../CountriesContext"
-import {filterByRegion} from "../../Utils/SortingFunctions"
+import { useCountryContext } from "../CountriesContext"
+import { filterByRegion, sortByMatch, sortByName } from "../../Utils/SortingFunctions"
 import { Regions } from "../../types/UI";
 import { fetchAllCountries } from "../../Utils/Requests";
 
@@ -17,6 +17,9 @@ const FilteringTools = () => {
           search
         </span>
         <input
+          onChange={(event)=>{
+                setCountries(sortByMatch(countries,event.target.value));
+          }}
           className="search-bar__input"
           placeholder="Search for a country ..."
           type="text"
