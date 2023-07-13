@@ -1,5 +1,6 @@
 import React from "react"
 import {fetchAllCountries} from '../../Utils/Requests'
+import {sortByName} from "../../Utils/SortingFunctions"
 
 interface CountryContextData{
     countries : any
@@ -10,8 +11,9 @@ const CountryContext = React.createContext<CountryContextData| undefined>(undefi
 
 export const CountryContextProvider = ({children} : React.PropsWithChildren) => {
     const [countries,setCountries] = React.useState<CountryContextData["countries"]>()
+
     React.useEffect(()=>{
-        fetchAllCountries().then(result=> {setCountries(result)})
+        fetchAllCountries().then(result=> {setCountries(sortByName(result))})
 
     },[])
     return <CountryContext.Provider  value={{countries,setCountries}}>{children}</CountryContext.Provider>

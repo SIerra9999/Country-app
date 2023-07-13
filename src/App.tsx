@@ -4,7 +4,7 @@ import CountryPage from './Components/ CountryPage';
 import TopBar from './Components/TopBar';
 import {useTheme } from './Components/ThemeContext';
 import {createHashRouter, RouterProvider} from "react-router-dom"
-import {CountryContextProvider,useCountryContext } from "./Components/CountriesContext"
+import {CountryContextProvider} from "./Components/CountriesContext"
 
 function App() {
 
