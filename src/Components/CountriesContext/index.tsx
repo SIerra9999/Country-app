@@ -11,7 +11,6 @@ const CountryContext = React.createContext<CountryContextData| undefined>(undefi
 
 export const CountryContextProvider = ({children} : React.PropsWithChildren) => {
     const [countries,setCountries] = React.useState<CountryContextData["countries"]>()
-
     React.useEffect(()=>{
         fetchAllCountries().then(result=> {setCountries(sortByName(result))})
 

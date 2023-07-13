@@ -3,6 +3,8 @@ export type NativeName = {
     common : string
 }
 
+export type Regions = "Asia" | "Africa" | "Americas" | "Europe" | "Oceania"
+
 export type Currency = {
     name : string, 
     symbol : string
@@ -23,7 +25,7 @@ export type CountryStats = {
     borders : Borders
     currencies : Object<Currency>
     population : number 
-    region : string
+    region : Regions
     subregion : string
     tld : string[]
     flags : {

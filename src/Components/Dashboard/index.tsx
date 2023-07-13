@@ -2,13 +2,13 @@ import React from 'react'
 import CountryCard from '../CountryCard'
 import FilteringTools from '../FilteringTools'
 import {useCountryContext} from '../CountriesContext'
+import { CountryStats } from '../../types/UI'
 
 const CountriesDashboard = () => {
 
   const {countries} = useCountryContext()
 
-  //@ts-ignore give this a proper type 
-  let mappedCountries = countries? countries.map((country)=>{
+  let mappedCountries = countries? countries.map((country : CountryStats)=>{
     
     return   <CountryCard
     key={country.name.common}

@@ -1,4 +1,5 @@
-import { CountryStats } from "../types/UI"
+import { CountryStats, Regions  } from "../types/UI"
+import { fetchAllCountries } from "./Requests"
 
 
 function sortByName(countryArr: CountryStats[]) {
@@ -14,6 +15,14 @@ function sortByName(countryArr: CountryStats[]) {
     })
 }
 
+function filterByRegion(countryArr : CountryStats[], selectedRegion : Regions | "All" ) {
+    return countryArr.filter(country => {
+        if (selectedRegion === "All") {
+            return countryArr
+        }
+        return country.region === selectedRegion
+    } )
+}
 
 
-export { sortByName }
+export { sortByName, filterByRegion }
